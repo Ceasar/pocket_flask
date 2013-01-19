@@ -11,10 +11,7 @@ def bootstrap():
     local("virtualenv venv --distribute")
 
     # Source virtualenv
-    local("source venv/bin/activate")
-
-    # Install Flask
-    local("pip install -r requirements.txt")
+    local("source venv/bin/activate && pip install -r requirements.txt")
 
     # Create the Procfile
     local("echo 'web: python app.py' > Procfile")
