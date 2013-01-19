@@ -1,7 +1,11 @@
+"""
+Scripts to automate tools.
+"""
 from fabric.api import local
 
 
-def boostrap():
+def bootstrap():
+    """Initialize a new project."""
     # Setup virtualenv
     local("virtualenv venv --distribute")
     local("source venv/bin/activate")
@@ -9,16 +13,16 @@ def boostrap():
     local("pip install -r requirements.txt")
     # Create the Procfile
     local("echo 'web: python app.py' > Procfile")
+    local("git init")
     # Create the gitignore file
     local("echo 'venv' >> .gitignore")
     local("echo '*.pyc' >> .gitignore")
-    # Commit everything with git
-    local("git init")
     local("git add .")
     local("git commit -m 'first commit'")
 
 
 def heroku():
+    """Create a new Heroku instance."""
     # Create a new Heroku app
     local("heroku create")
     # Push the app to Heroku's servers
@@ -33,4 +37,5 @@ def heroku():
 
 
 def run():
+    """Run the flask application."""
     local("python app.py")
