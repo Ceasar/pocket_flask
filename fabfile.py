@@ -9,6 +9,8 @@ def bootstrap():
 
     # Setup virtualenv
     local("virtualenv venv --distribute")
+
+    # Source virtualenv
     local("source venv/bin/activate")
 
     # Install Flask
@@ -16,11 +18,9 @@ def bootstrap():
 
     # Create the Procfile
     local("echo 'web: python app.py' > Procfile")
-    local("git init")
 
-    # Create the gitignore file
-    local("echo 'venv' >> .gitignore")
-    local("echo '*.pyc' >> .gitignore")
+    # initialize a git repository
+    local("git init")
 
     # Commit!
     local("git add .")
