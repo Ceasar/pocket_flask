@@ -1,14 +1,19 @@
 
 
-# ex_nihilo
+# ennihilator
 
-Easy hack-creation kit (bootstrap + flask + heroku). Create something out of nothing.
+Create web apps out of nothing.
 
-ex_nihilio is designed with the following goals in mind:
+Design Goals:
 
 - Speed. Application setup time should be minimized.
-- Abstraction. ex_nihilio is meant for group projects, and knowledge of specific tools like virtualenv and heroku is not assumed.
+- Easy. Non-programmers should be able to deploy an application locally.
 
+Application Stack:
+
+- Bootstrap
+- Flask
+- Heroku
 
 # Installation
 
@@ -16,10 +21,17 @@ ex_nihilio is designed with the following goals in mind:
 - Install [pip](http://www.pip-installer.org/en/latest/installing.html)
 - Install [virtualenv](http://www.virtualenv.org/en/latest/#installation)
 - Install fabric. (`pip install fabric`)
-- Finally, download this project a zip file (do _not_ clone) and run `fab bootstrap`.
+
+# Bootstrapping
+
+```
+git clone https://github.com/Ceasar/ennihilator
+cd ennihilator
+git remote rm origin
+git remote add origin <the location of my new git repository>
+git push -u origin master
+```
 
 # Usage
 
-ex_nihilio is just a regular flask app at its core, which means you can use it as such if that's all you need.
-
-ex_nihilio also comes with a fabfile that is useful for automating common tasks (such as creating a heroku app) as well as providing more user-friendly commands to people not familiar with standard web tools.
+The project comes with a fabfile that is useful for automating common tasks (such as creating a heroku app) as well as providing more user-friendly commands to people not familiar with standard web tools.
