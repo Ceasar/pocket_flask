@@ -13,9 +13,6 @@ def bootstrap():
     # Source virtualenv
     local("source venv/bin/activate && pip install -r requirements.txt")
 
-    # Create the Procfile
-    local("echo 'web: python app.py' > Procfile")
-
     # initialize a git repository
     local("git init")
 
@@ -50,4 +47,4 @@ def push_heroku(branch="master"):
 
 def run():
     """Run the flask application."""
-    local("python app.py")
+    local("foreman start")

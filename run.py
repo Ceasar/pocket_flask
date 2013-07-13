@@ -5,7 +5,7 @@ from app import app
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
-    port = int(os.environ.get('PORT', 5002))
+    port = int(os.environ.get('PORT', 5000))
     """
     Enable debug support. The server will reload itself on code changes,
     and it will also provide you with a helpful debugger if things go wrong.
