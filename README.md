@@ -1,8 +1,7 @@
 
+# Pocket Flask
 
-# ennihilator
-
-Create web apps out of nothing.
+Tool to scaffold for Flask apps.
 
 Design Goals:
 
@@ -25,8 +24,8 @@ Application Stack:
 # Bootstrapping
 
 ```
-git clone https://github.com/Ceasar/ennihilator
-cd ennihilator
+git clone https://github.com/Ceasar/pocket_flask
+cd pocket_flask
 git remote rm origin
 git remote add origin <the location of my new git repository>
 git push -u origin master
