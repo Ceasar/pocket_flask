@@ -13,7 +13,7 @@ For more information, have a look at the Flask documentation.
 """
 
 
-def create_app():
+def create_app(config_filename):
     app = Flask(__name__)
 
     app.register_blueprint(general)
