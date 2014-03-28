@@ -1,6 +1,6 @@
 import os
 
-from app import app
+from app import create_app
 
 
 if __name__ == '__main__':
@@ -12,5 +12,6 @@ if __name__ == '__main__':
     This makes it a major security risk and therefore it must never be used
     on production machines.
     """
+    app = create_app()
     app.debug = True
     app.run(host='0.0.0.0', port=port)

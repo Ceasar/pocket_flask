@@ -1,5 +1,7 @@
 from flask import Flask
 
+from app.views import general
+
 """
 An instance of Flask will be our WSGI application.
 The first argument is the name of the application's module.
@@ -9,6 +11,11 @@ application or imported as module the name will be different
 ('__main__' versus the actual import name).
 For more information, have a look at the Flask documentation.
 """
-app = Flask(__name__)
 
-from app.views import general
+
+def create_app():
+    app = Flask(__name__)
+
+    app.register_blueprint(general)
+
+    return app
