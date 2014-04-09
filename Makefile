@@ -6,7 +6,7 @@ virtualenv:
 	virtualenv $(ENV)
 
 server:
-	foreman start
+	python run.py
 
 install:
 	pip install -r requirements.txt
