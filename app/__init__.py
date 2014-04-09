@@ -1,6 +1,6 @@
 from flask import Flask
 
-from app.views import general
+from app.controllers import general
 
 """
 An instance of Flask will be our WSGI application.
