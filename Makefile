@@ -5,12 +5,12 @@ ENV = env
 virtualenv:
 	virtualenv $(ENV)
 
+server:
+	foreman start
+
 install:
 	pip install -r requirements.txt
 	gem install foreman
-
-run:
-	foreman start
 
 deploy:
 	git push heroku master
@@ -25,6 +25,3 @@ heroku:
 	heroku ps
 	heroku logs
 	heroku open
-
-all:
-	make run
