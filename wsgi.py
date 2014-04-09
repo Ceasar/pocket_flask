@@ -1,5 +1,7 @@
 from app import create_app
 
+app = create_app('config')
+
 
 if __name__ == '__main__':
     """
@@ -8,5 +10,4 @@ if __name__ == '__main__':
     This makes it a major security risk and therefore it must never be used
     on production machines.
     """
-    app = create_app('config')
     app.run()

@@ -6,7 +6,7 @@ virtualenv:
 	virtualenv $(ENV)
 
 server:
-	python run.py
+	python wsgi.py
 
 install:
 	pip install -r requirements.txt
