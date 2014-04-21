@@ -8,16 +8,8 @@ Tool to scaffold for Flask apps.
 The primary design goal is speed of development; application setup time should
 be minimized.
 
-Application Stack:
-
-- Flask
-
-- Heroku
-
 Installation
 ================================================================================
-
-- Download [Heroku Toolbelt](https://toolbelt.heroku.com/)
 
 - Install [pip](http://www.pip-installer.org/en/latest/installing.html)
 
