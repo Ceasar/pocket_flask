@@ -1,3 +1,11 @@
+"""
+
+controllers.pages
+~~~~~~~~~~~~~~~~~
+
+Serves static pages.
+
+"""
 from flask import render_template, Blueprint
 
 
