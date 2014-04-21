@@ -3,17 +3,7 @@
 Pocket Flask
 ================================================================================
 
-Tool to scaffold for Flask apps.
-
-The primary design goal is speed of development; application setup time should
-be minimized.
-
-Installation
-================================================================================
-
-- Install [pip](http://www.pip-installer.org/en/latest/installing.html)
-
-- Install [virtualenv](http://www.virtualenv.org/en/latest/#installation)
+Scaffolding for Flask apps.
 
 Bootstrapping
 ================================================================================
