@@ -1,1 +1,1 @@
-from general import general
+from pages import pages

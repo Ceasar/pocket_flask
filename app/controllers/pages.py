@@ -1,9 +1,9 @@
 from flask import render_template, Blueprint
 
 
-general = Blueprint('general', __name__)
+pages = Blueprint('general', __name__)
 
 
-@general.route('/')
+@pages.route('/')
 def index():
     return render_template("index.html")
