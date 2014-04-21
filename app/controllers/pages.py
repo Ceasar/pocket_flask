@@ -9,7 +9,7 @@ Serves static pages.
 from flask import render_template, Blueprint
 
 
-pages = Blueprint('general', __name__)
+pages = Blueprint('pages', __name__)
 
 
 @pages.route('/')
