@@ -3,7 +3,8 @@
 Pocket Flask
 ================================================================================
 
-Scaffolding for Flask apps.
+Scaffolding for Flask apps. Loosely inspired by Rails and best practices from
+the Flask docs.
 
 Bootstrapping
 ================================================================================
