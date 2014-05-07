@@ -15,6 +15,7 @@ For more information, have a look at the Flask documentation.
 
 def create_app(config_filename):
     app = Flask(__name__)
+    app.config.from_object(config_filename)
 
     app.register_blueprint(general)
 
