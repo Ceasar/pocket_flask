@@ -1,6 +1,6 @@
 from flask import Flask
 
-from app.controllers import general
+from app.controllers import pages
 
 """
 An instance of Flask will be our WSGI application.
@@ -17,6 +17,6 @@ def create_app(config_filename):
     app = Flask(__name__)
     app.config.from_object(config_filename)
 
-    app.register_blueprint(general)
+    app.register_blueprint(pages)
 
     return app
