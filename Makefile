@@ -4,7 +4,7 @@ ENV = env
 
 install:
 	export PIP_DOWNLOAD_CACHE=.pip_download_cache; pip install --requirement requirements.txt
-	gem install foreman
+	# gem install foreman
 
 virtualenv:
 	test -d $(ENV) || virtualenv $(ENV)
@@ -16,3 +16,6 @@ server:
 
 shell:
 	python shell.py
+
+test:
+	. $(ENV)/bin/activate; make install; py.test tests/
