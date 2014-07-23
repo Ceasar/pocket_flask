@@ -1,3 +1,5 @@
+import logging
+
 from flask import Flask
 
 from app.controllers import pages
@@ -18,5 +20,8 @@ def create_app(config_filename):
     app.config.from_object(config_filename)
 
     app.register_blueprint(pages)
+
+    app.logger.setLevel(logging.NOTSET)
+    app.logger.addHandler(logging.StreamHandler())
 
     return app
