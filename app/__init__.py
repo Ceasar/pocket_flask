@@ -1,6 +1,6 @@
 import logging
 
-from flask import Flask
+from flask import Flask, request as req
 
 from app.controllers import pages
 
@@ -22,6 +22,10 @@ def create_app(config_filename):
     app.register_blueprint(pages)
 
     app.logger.setLevel(logging.NOTSET)
-    app.logger.addHandler(logging.StreamHandler())
+
+    @app.after_request
+    def log_response(resp):
+        app.logger.info("%s %s %s\n%s" % (req.method, req.url, req.data, resp))
+        return resp
 
     return app
