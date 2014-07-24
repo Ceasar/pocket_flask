@@ -1,21 +1,19 @@
 .PHONY: virtualenv
 
-ENV = env
-
-install:
-	export PIP_DOWNLOAD_CACHE=.pip_download_cache; pip install --requirement requirements.txt
-	# gem install foreman
-
-virtualenv:
-	test -d $(ENV) || virtualenv $(ENV)
+ENV = development
+VENV = config/$(ENV)/env
+export PYTHONPATH := $(PYTHONPATH):.
 
 # Run a local web server
-server:
-	make virtualenv
-	. $(ENV)/bin/activate; make install; python wsgi.py
+server: $(VENV)
+	. $(VENV)/bin/activate; python wsgi.py
+
+config/%/env: config/%/requirements.txt
+	virtualenv $@
+	. $@/bin/activate && pip install --requirement $<
 
 shell:
 	python shell.py
 
-test:
-	. $(ENV)/bin/activate; make install; py.test tests/
+test: $(VENV)
+	. $(VENV)/bin/activate; py.test tests/
