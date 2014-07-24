@@ -1,6 +1,7 @@
 .PHONY: virtualenv
 
 ENV = development
+PYTEST_OPTIONS = -vv --exitfirst -n 8
 VENV = config/$(ENV)/env
 export PYTHONPATH := $(PYTHONPATH):.
 
@@ -16,4 +17,4 @@ shell:
 	python shell.py
 
 test: $(VENV)
-	. $(VENV)/bin/activate; py.test tests/
+	. $(VENV)/bin/activate; py.test $(PYTEST_OPTIONS) tests/
