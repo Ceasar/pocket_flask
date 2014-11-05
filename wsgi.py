@@ -1,6 +1,8 @@
+import os
+
 from app import create_app
 
-app = create_app('config.development')
+app = create_app('config.%s' % os.environ['ENV'])
 
 
 if __name__ == '__main__':

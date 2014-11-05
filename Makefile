@@ -1,6 +1,6 @@
 .PHONY: server shell test
 
-ENV = development
+export ENV = development
 PYTEST_OPTIONS = -vv --exitfirst -n 8
 VENV = config/$(ENV)/env
 export PYTHONPATH := $(PYTHONPATH):.
