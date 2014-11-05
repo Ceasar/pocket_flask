@@ -1,4 +1,4 @@
-.PHONY: virtualenv
+.PHONY: server shell test
 
 ENV = development
 PYTEST_OPTIONS = -vv --exitfirst -n 8
