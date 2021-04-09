@@ -10,7 +10,7 @@ server: $(VENV)
 	. $(VENV)/bin/activate; python wsgi.py
 
 config/%/env: config/%/requirements.txt
-	virtualenv $@
+	python3 -m venv $@
 	. $@/bin/activate && pip install --requirement $<
 
 shell:
